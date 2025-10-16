@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Web Mahjong — Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="ブラウザで遊べる麻雀（CPU対戦）。本格風UI、アニメーションつき。">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Web Mahjong</h1>
+    <div class="controls">
+      難易度:
+      <select id="difficulty">
+        <option value="0">Easy</option>
+        <option value="1" selected>Normal</option>
+        <option value="2">Hard</option>
+      </select>
+      <button id="startBtn">ゲーム開始</button>
+    </div>
+  </header>
+
+  <main class="table">
+    <div id="north" class="seat seat-north">
+      <div class="name">CPU 3</div>
+      <div class="hand" data-player="2"></div>
+    </div>
+    <div id="west" class="seat seat-west">
+      <div class="name">CPU 2</div>
+      <div class="hand" data-player="1"></div>
+    </div>
+
+    <section class="center">
+      <div class="board">
+        <div id="discard-pile" class="discard-pile"></div>
+        <div id="wall" class="wall">🀫</div>
+      </div>
+    </section>
+
+    <div id="east" class="seat seat-east">
+      <div class="name">CPU 4</div>
+      <div class="hand" data-player="3"></div>
+    </div>
+    <div id="south" class="seat seat-south">
+      <div class="name">You</div>
+      <div id="player-hand" class="hand" data-player="0"></div>
+    </div>
+  </main>
+
+  <aside class="panel">
+    <div id="log" class="log"></div>
+    <div class="actions">
+      <button id="autoPlayBtn">自動で次へ</button>
+      <button id="hintBtn">ヒント</button>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <small>このデモは教育目的に作成されたブラウザ麻雀です。正式なルール・点数計算は簡略化されています。</small>
+  </footer>
+</body>
+</html>
